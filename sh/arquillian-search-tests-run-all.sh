@@ -274,6 +274,18 @@ function test_run()
 	do_test_run $directory $no_settings_gradle "${tests[@]}"
 }
 
+function test_run_dxp()
+{
+	local subdir=$1
+	shift 1
+	local tests=( "$@" )
+
+	local directory=${LIFERAY_PORTAL_DIR}/modules/dxp/apps/$subdir
+	local no_settings_gradle=true
+
+	do_test_run $directory $no_settings_gradle "${tests[@]}"
+}
+
 function main() 
 {
 
